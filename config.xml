@@ -87,7 +87,7 @@
     <plugin name="cordova-plugin-file" spec="6.0.1" />
     <plugin name="cordova-plugin-filechooser" spec="1.0.1" />
     <allow-navigation href="http://172.24.242.62:8100" sessionid="9994b3ec" />
-    <allow-navigation href="http://172.24.243.162:8100" sessionid="ce9c77dd" />
+    <allow-navigation href="http://172.24.243.162:8100" sessionid="313403c3" />
     <engine name="browser" spec="5.0.4" />
     <engine name="ios" spec="4.5.5" />
     <engine name="android" spec="7.1.2" />
