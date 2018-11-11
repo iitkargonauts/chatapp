@@ -9,5 +9,8 @@ import { GroupmembersPage } from './groupmembers';
   imports: [
     IonicPageModule.forChild(GroupmembersPage),
   ],
+  exports: [
+    GroupmembersPage
+  ]
 })
 export class GroupmembersPageModule {}

@@ -9,8 +9,9 @@ import { GroupsProvider } from '../../providers/groups/groups';
   templateUrl: 'groupmembers.html',
 })
 export class GroupmembersPage {
-  groupmembers;
-  tempgrpmembers;
+  groupmembers = [];
+  tempgrpmembers = [];
+  searchstring;
   constructor(public navCtrl: NavController, public navParams: NavParams, public groupservice: GroupsProvider,
               public events: Events) {
   }
@@ -25,8 +26,9 @@ export class GroupmembersPage {
     
   }
 
+
   ionViewWillLeave() {
-    this.events.unsubscribe('gotintogroups');
+    this.events.unsubscribe('gotintogroup');
   }
 
   searchuser(searchbar) {

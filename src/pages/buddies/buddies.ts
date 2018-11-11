@@ -19,6 +19,7 @@ export class BuddiesPage {
   newrequest = {} as connreq;
   temparr = [];
   filteredusers = [];
+  searchstring;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public userservice: UserProvider, public alertCtrl: AlertController,
     public requestservice: RequestsProvider) {
