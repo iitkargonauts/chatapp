@@ -19,7 +19,7 @@ export class PasswordresetPage {
   }
  
   ionViewDidLoad() {
-   // console.log('ionViewDidLoad PasswordresetPage');
+   console.log('ionViewDidLoad PasswordresetPage');
   }
  
   reset() {

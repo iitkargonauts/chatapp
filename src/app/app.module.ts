@@ -39,7 +39,9 @@ import { ImghandlerProvider } from '../providers/imghandler/imghandler';
     AngularFireAuth,
     UserProvider,
     ImghandlerProvider,
-    FileChooser
+    FileChooser,
+    File,
+    FilePath
   ]
 })
 export class AppModule {}
