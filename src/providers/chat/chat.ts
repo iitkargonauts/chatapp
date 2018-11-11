@@ -29,7 +29,7 @@ export class ChatProvider {
           message: msg,
           timestamp: firebase.database.ServerValue.TIMESTAMP
         }).then(() => {
-          this.firebuddychats.child(this.buddy.uid).child(firebase.auth().currentUser.uid).push({
+          this.firebuddychats.child(this.buddy.uid).child(firebase.auth().currentUser.uid).push().set({
             sentby: firebase.auth().currentUser.uid,
             message: msg,
             timestamp: firebase.database.ServerValue.TIMESTAMP
