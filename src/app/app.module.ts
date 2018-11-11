@@ -17,6 +17,7 @@ import { MyApp } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
 import { UserProvider } from '../providers/user/user';
 import { ImghandlerProvider } from '../providers/imghandler/imghandler';
+import { RequestsProvider } from '../providers/requests/requests';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ImghandlerProvider } from '../providers/imghandler/imghandler';
     ImghandlerProvider,
     FileChooser,
     File,
-    FilePath
+    FilePath,
+    RequestsProvider
   ]
 })
 export class AppModule {}

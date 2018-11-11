@@ -3,7 +3,7 @@
     <name>ionic3chat</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://172.24.243.162:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -86,6 +86,7 @@
     <plugin name="cordova-plugin-filepath" spec="1.4.2" />
     <plugin name="cordova-plugin-file" spec="6.0.1" />
     <plugin name="cordova-plugin-filechooser" spec="1.0.1" />
+    <allow-navigation href="http://172.24.243.162:8100" sessionid="e8319766" />
     <engine name="browser" spec="5.0.4" />
     <engine name="ios" spec="4.5.5" />
     <engine name="android" spec="7.1.2" />
