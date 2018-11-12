@@ -31,15 +31,15 @@ export class GroupchatPage {
     this.groupName = this.navParams.get('groupName');
     this.groupservice.getownership(this.groupName).then((res) => {
       if (res)
-        this.owner = true;  
+        this.owner = true;
     }).catch((err) => {
       alert(err);
-      })
+    })
     this.groupservice.getgroupmsgs(this.groupName);
     this.events.subscribe('newgroupmsg', () => {
-      this.allgroupmsgs = [];
       this.imgornot = [];
       this.allgroupmsgs = this.groupservice.groupmsgs;
+      console.log('all groupmsgs : ' + JSON.stringify(this.groupservice.groupmsgs));
       for (var key in this.allgroupmsgs) {
         var d = new Date(this.allgroupmsgs[key].timestamp);
         var hours = d.getHours();
@@ -49,7 +49,7 @@ export class GroupchatPage {
 
         var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        
+
         var formattedTime = monthNames[month] + "-" + da + "-" + hours + ":" + minutes.substr(-2);
 
         this.allgroupmsgs[key].timestamp = formattedTime;
@@ -61,12 +61,14 @@ export class GroupchatPage {
         }
       }
       this.scrollto();
+
     })
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GroupchatPage');
+    this.groupservice.getgroupmsgs(this.groupName);
   }
 
   sendpicmsg() {
@@ -84,6 +86,16 @@ export class GroupchatPage {
       alert(err);
       loader.dismiss();
     })
+  }
+
+  scrollto() {
+    setTimeout(() => {
+      if (this.content._scroll != null) {
+        this.content.scrollToBottom(0).catch((err) => {
+          console.log('scroll to bottom error 3 : ' + err);
+        });
+      }
+    }, 1000);
   }
 
   presentOwnerSheet() {
@@ -108,7 +120,7 @@ export class GroupchatPage {
           text: 'Group Info',
           icon: 'person',
           handler: () => {
-            this.navCtrl.push('GroupinfoPage', {groupName: this.groupName});
+            this.navCtrl.push('GroupinfoPage', { groupName: this.groupName });
           }
         },
         {
@@ -154,7 +166,7 @@ export class GroupchatPage {
           text: 'Group Info',
           icon: 'person',
           handler: () => {
-            this.navCtrl.push('GroupinfoPage', {groupName: this.groupName});
+            this.navCtrl.push('GroupinfoPage', { groupName: this.groupName });
           }
         },
         {
@@ -175,12 +187,6 @@ export class GroupchatPage {
       this.scrollto();
       this.newmessage = '';
     })
-  }
-
-  scrollto() {
-    setTimeout(() => {
-      this.content.scrollToBottom();
-    }, 1000);
   }
 
 }

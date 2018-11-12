@@ -110,6 +110,8 @@ export class UserProvider {
     }).catch((err) => {
       reject(err);
       })
+    }).catch((err) => {
+      console.log('Error is : ' + err);
     })
     return promise;
   }

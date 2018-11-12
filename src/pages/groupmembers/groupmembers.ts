@@ -27,6 +27,7 @@ export class GroupmembersPage {
   }
 
 
+
   ionViewWillLeave() {
     this.events.unsubscribe('gotintogroup');
   }
@@ -54,6 +55,7 @@ export class GroupmembersPage {
 
   removemember(member) {
     this.groupservice.deletemember(member);
+
   }
 
 }

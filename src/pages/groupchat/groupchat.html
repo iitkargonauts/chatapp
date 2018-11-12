@@ -18,10 +18,10 @@
   </ion-header>
   
   
-  <ion-content #content>
+  <ion-content #content class="background">
   <div class = "chatwindow">
-    <ion-list no-lines>
-      <ion-item *ngFor = "let item of allgroupmsgs; let i = index" text-wrap>
+    <ion-list no-lines style="background-color: none !important">
+      <ion-item *ngFor = "let item of allgroupmsgs; let i = index" text-wrap style="background-color: none !important">
         <ion-avatar item-left *ngIf="item.sentby === alignuid">
           <img src="{{photoURL}}">
         </ion-avatar>
@@ -44,7 +44,7 @@
     </ion-list>
   </div>
   </ion-content>
-  <ion-footer ion-fixed>    
+  <ion-footer ion-fixed>
     <ion-toolbar class="no-border" color="white">        
       <ion-input [(ngModel)]="newmessage" placeholder="Write your message ..."></ion-input>  
       <ion-buttons end>

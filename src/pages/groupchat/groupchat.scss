@@ -1,4 +1,8 @@
 page-groupchat {
+    .background {
+        background-image: url('../assets/chatwallpaper.jpg');
+    }
+
     .chat {
         width: 320px;
     }
@@ -12,9 +16,17 @@ page-groupchat {
         position: relative;
         vertical-align: top;
     }
+
+    .label-md {
+        background-color: rgba(0,0,0,0) !important;
+    }
+
+    .item-md {
+        background-color: rgba(0,0,0,0) !important;
+    }
     
     .bubble::before {
-        background-color: #F2F2F2;
+        background-color:#f2f2f2;
         content: "\00a0";
         display: block;
         height: 16px;
@@ -49,6 +61,7 @@ page-groupchat {
     }
     
     .chatwindow {
+        background-color: rgba(0,0,0,0) !important;
         padding-bottom: 70px;
     }
     }

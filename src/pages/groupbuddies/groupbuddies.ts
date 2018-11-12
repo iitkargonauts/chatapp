@@ -21,7 +21,7 @@ export class GroupbuddiesPage {
   ionViewWillEnter() {
     this.requestservice.getmyfriends();
     this.events.subscribe('gotintogroup', () => {
-      this.myfriends.splice(this.myfriends.indexOf(this.newbuddy.uid), 1);
+      this.myfriends.splice(this.myfriends.indexOf(this.newbuddy), 1);
       this.tempmyfriends = this.myfriends;
     })
     this.events.subscribe('friends', () => {

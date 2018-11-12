@@ -46,7 +46,11 @@ export class BuddychatPage {
 
   addmessage() {
     this.chatservice.addnewmessage(this.newmessage).then(() => {
-      this.content.scrollToBottom();
+      if(this.content._scroll != null){
+        this.content.scrollToBottom(0).catch((err) => {
+          console.log('scroll to bottom error 1 : ' + err);
+        });
+      }
       this.newmessage = '';
     })
   }
@@ -57,7 +61,11 @@ export class BuddychatPage {
 
   scrollto() {
     setTimeout(() => {
-      this.content.scrollToBottom();
+      if(this.content._scroll != null){
+        this.content.scrollToBottom(0).catch((err) => {
+          console.log('scroll to bottom error 2 : ' + err);
+        });
+      }
     }, 1000);
   }
 
