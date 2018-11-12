@@ -2,7 +2,7 @@ page-groupchat {
     .background {
         background-image: url('../assets/chatwallpaper.jpg');
     }
-
+    
     .chat {
         width: 320px;
     }
@@ -26,7 +26,7 @@ page-groupchat {
     }
     
     .bubble::before {
-        background-color:#f2f2f2;
+        background-color: #F2F2F2;
         content: "\00a0";
         display: block;
         height: 16px;
@@ -41,23 +41,23 @@ page-groupchat {
     }
     
     .me {
-        float: left;   
-        margin: 5px 45px 5px 20px;         
-    }
-    
-    .me::before {
-        box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
-        left: -9px;           
-    }
-    
-    .you {
-        float: right;    
+        float: right;   
         margin: 5px 20px 5px 45px;         
     }
     
-    .you::before {
+    .me::before {
         box-shadow: 2px -2px 2px 0 rgba( 178, 178, 178, .4 );
-        right: -9px;    
+        right: -9px;           
+    }
+    
+    .you {
+        float: left;    
+        margin: 5px 45px 5px 20px;         
+    }
+    
+    .you::before {
+        box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+        left: -9px;    
     }
     
     .chatwindow {

@@ -14,7 +14,7 @@ import { UserProvider } from '../../providers/user/user';
   templateUrl: 'profilepic.html',
 })
 export class ProfilepicPage {
-  imgurl = 'https://firebasestorage.googleapis.com/v0/b/myapp-4eadd.appspot.com/o/chatterplace.png?alt=media&token=e51fa887-bfc6-48ff-87c6-e2c61976534e';
+  imgurl = 'https://firebasestorage.googleapis.com/v0/b/chat-app-argonauts.appspot.com/o/profilepic?alt=media&token=3bcc46b0-479f-4614-a7a1-72f480e78f3e';
   moveon = true;
   constructor(public navCtrl: NavController, public navParams: NavParams, public imgservice: ImghandlerProvider,
     public zone: NgZone, public userservice: UserProvider, public loadingCtrl: LoadingController) {

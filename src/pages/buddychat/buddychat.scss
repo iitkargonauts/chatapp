@@ -1,4 +1,8 @@
 page-buddychat {
+    .background {
+        background-image: url('../assets/chatwallpaper.jpg');
+    }
+    
     .chat {
         width: 320px;
     }
@@ -11,6 +15,14 @@ page-buddychat {
         padding: 10px 18px;
         position: relative;
         vertical-align: top;
+    }
+
+    .label-md {
+        background-color: rgba(0,0,0,0) !important;
+    }
+
+    .item-md {
+        background-color: rgba(0,0,0,0) !important;
     }
     
     .bubble::before {
@@ -30,7 +42,7 @@ page-buddychat {
     
     .me {
         float: left;   
-        margin: 5px 45px 5px 20px;         
+        margin: 5px 20px 5px 45px;         
     }
     
     .me::before {
@@ -40,7 +52,7 @@ page-buddychat {
     
     .you {
         float: right;    
-        margin: 5px 20px 5px 45px;         
+        margin: 5px 45px 5px 20px;         
     }
     
     .you::before {
@@ -49,6 +61,7 @@ page-buddychat {
     }
     
     .chatwindow {
+        background-color: rgba(0,0,0,0) !important;
         padding-bottom: 70px;
     }
     }

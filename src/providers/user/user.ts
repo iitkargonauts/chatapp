@@ -29,12 +29,12 @@ export class UserProvider {
       this.afireauth.auth.createUserWithEmailAndPassword(newuser.email, newuser.password).then(() => {
         this.afireauth.auth.currentUser.updateProfile({
           displayName: newuser.displayName,
-          photoURL: 'https://firebasestorage.googleapis.com/v0/b/myapp-4eadd.appspot.com/o/chatterplace.png?alt=media&token=e51fa887-bfc6-48ff-87c6-e2c61976534e'
+          photoURL: 'https://firebasestorage.googleapis.com/v0/b/chat-app-argonauts.appspot.com/o/profilepic?alt=media&token=3bcc46b0-479f-4614-a7a1-72f480e78f3e'
         }).then(() => {
           this.firedata.child(this.afireauth.auth.currentUser.uid).set({
             uid: this.afireauth.auth.currentUser.uid,
             displayName: newuser.displayName,
-            photoURL: 'https://firebasestorage.googleapis.com/v0/b/myapp-4eadd.appspot.com/o/chatterplace.png?alt=media&token=e51fa887-bfc6-48ff-87c6-e2c61976534e'
+            photoURL: 'https://firebasestorage.googleapis.com/v0/b/chat-app-argonauts.appspot.com/o/profilepic?alt=media&token=3bcc46b0-479f-4614-a7a1-72f480e78f3e'
           }).then(() => {
             resolve({ success: true });
             }).catch((err) => {
