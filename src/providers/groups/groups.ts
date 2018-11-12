@@ -48,7 +48,7 @@ export class GroupsProvider {
           .equalTo(firebase.auth().currentUser.uid).once('value', (snapshot) => {
             snapshot.ref.remove().then(() => {
               this.firegroup.child(firebase.auth().currentUser.uid).child(this.currentgroupname).remove().then(() => {
-                resolve(true);
+                this.getintogroup(this.currentgroupname);
               }).catch((err) => {
                 reject(err);
               })
@@ -59,6 +59,10 @@ export class GroupsProvider {
       })
     })
   }
+
+  // this.firegroup.child(firebase.auth().currentUser.uid).child(this.currentgroupname).remove().then(() => {
+  //   this.getintogroup(this.currentgroupname);
+  // })
 
   deletegroup() {
     return new Promise((resolve, reject) => {

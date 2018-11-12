@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Login</ion-title>
+    <ion-title>ArgoChats</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,23 +15,22 @@
 
 <ion-content class="background">
   <ion-card>
-    <ion-card-header>
-      Login
-    </ion-card-header>
     <ion-card-content>
       <ion-list no-lines>
         <div class="spacer" style="height: 10px;"></div>
         <ion-item>
-          <ion-input type="email" placeholder="Email" [(ngModel)]="credentials.email"></ion-input>
+          <ion-input type="email" placeholder="Email" [(ngModel)]="credentials.email" ></ion-input>
+          <ion-icon name="mail" item-left></ion-icon>
         </ion-item>
         <div class="spacer" style="height: 5px;"></div>
         <ion-item>
           <ion-input type="password" placeholder="Password" [(ngModel)]="credentials.password"></ion-input>
+          <ion-icon name="lock" item-left></ion-icon>
         </ion-item>
+        <div class="spacer" style="height: 5px;"></div>
+        <a (click)="passwordreset()" text-right>Forgot Password?</a>
         <div class="spacer" style="height: 10px;"></div>
-        <a (click)="passwordreset()">Forgot login details ? <b> Get Help </b></a>
-        <div class="spacer" style="height: 10px;"></div>
-        <button ion-button block round outline color="light" (click)="signin()">Login</button>
+        <button ion-button block round color="light" (click)="signin()">Let's Go!</button>
         <div class="spacer" style="height: 10px;"></div>
         <p>OR</p>
         <div class="spacer" style="height: 10px;"></div>
