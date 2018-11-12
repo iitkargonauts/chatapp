@@ -15,7 +15,7 @@ import { UserProvider } from '../../providers/user/user';
 export class SignupPage {
   newuser = {
     email: '',
-    password: '',
+    password: 'initialpassword',
     displayName: ''
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, public userservice: UserProvider,
@@ -41,9 +41,13 @@ export class SignupPage {
       });
       loader.present();
       this.userservice.adduser(this.newuser).then((res: any) => {
+        this.userservice.passwordreset(this.newuser.email);
         loader.dismiss();
-        if (res.success)
-          this.navCtrl.push('ProfilepicPage');
+        if (res.success){
+          var x=1;
+          alert('Please verify the email by clicking on Activation link sent to ' + this.newuser.email );
+          this.goback();
+        }
         else
           alert('Error' + res);
       })
