@@ -23,16 +23,20 @@ export class PasswordresetPage {
   }
  
   reset() {
-    let alert = this.alertCtrl.create({
-      buttons: ['Ok']
-    });
+    // let alert = this.alertCtrl.create({
+    //   buttons: ['Ok']
+    // });
     this.userservice.passwordreset(this.email).then((res: any) => {
+      console.log('1');
       if (res.success) {
-        alert.setTitle('Email Sent');
-        alert.setSubTitle('Please follow the instructions in the email to reset your password');
+        console.log('2');
+        alert('Email has been Sent.\n'+'Please follow the instructions in the email to reset your password');
+        this.goback();
       }
       else {
-        alert.setTitle('Failed');
+        console.log('3');
+        var erro = 'The Email is not registered'
+        alert(erro);
       }
     })
   }

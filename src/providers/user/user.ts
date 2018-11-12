@@ -62,9 +62,11 @@ export class UserProvider {
   passwordreset(email) {
     var promise = new Promise((resolve, reject) => {
       firebase.auth().sendPasswordResetEmail(email).then(() => {
+        console.log('6');
         resolve({ success: true });
       }).catch((err) => {
-        reject(err);
+        console.log('7');
+        resolve(err);
       })
     })
     return promise;

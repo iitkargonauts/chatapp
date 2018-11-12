@@ -21,11 +21,15 @@ export class AuthProvider {
 */  
   
   login(credentials: usercreds) {
+    console.log('sta aA1');
     var promise = new Promise((resolve, reject) => {
+      console.log('sta aA2');
       this.afireauth.auth.signInWithEmailAndPassword(credentials.email, credentials.password).then(() => {
-        resolve(true);
+        console.log('sta aA3');
+        resolve({success : true});
       }).catch((err) => {
-        reject(err);
+        console.log('sta aA4');
+        resolve(err);
        })
     })
 

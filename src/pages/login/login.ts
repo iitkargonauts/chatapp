@@ -26,10 +26,13 @@ export class LoginPage {
 
   signin() {
     this.authservice.login(this.credentials).then((res: any) => {
-      if(!res.code)
+      if(res.success)
+      {
+        console.log('sta aA5'); 
         this.navCtrl.setRoot('TabsPage');
+      }
       else 
-        alert(res);
+        {console.log('sta aA63');alert(res);}
 
     })
   }
